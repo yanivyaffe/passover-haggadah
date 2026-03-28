@@ -1,0 +1,357 @@
+/* ─── 90s Windows 95/98 Chrome ─── */
+
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root {
+  --win-bg: #c0c0c0;
+  --win-border-light: #ffffff;
+  --win-border-dark: #808080;
+  --win-border-darker: #000000;
+  --win-titlebar: #000080;
+  --win-titlebar-text: #ffffff;
+  --win-titlebar-inactive: #808080;
+  --win-btn-face: #c0c0c0;
+  --desktop-bg: #008080;
+  --taskbar-bg: #c0c0c0;
+  --font-ui: 'MS Sans Serif', 'Tahoma', sans-serif;
+  --font-display: 'VT323', monospace;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  user-select: none;
+}
+
+/* ─── Raised (outset) element ─── */
+.raised {
+  border-top: 2px solid var(--win-border-light);
+  border-left: 2px solid var(--win-border-light);
+  border-right: 2px solid var(--win-border-darker);
+  border-bottom: 2px solid var(--win-border-darker);
+}
+
+/* ─── Sunken (inset) element ─── */
+.sunken {
+  border-top: 2px solid var(--win-border-darker);
+  border-left: 2px solid var(--win-border-darker);
+  border-right: 2px solid var(--win-border-light);
+  border-bottom: 2px solid var(--win-border-light);
+}
+
+/* ─── Windows 95 Button ─── */
+.win-btn {
+  background: var(--win-btn-face);
+  border-top: 2px solid var(--win-border-light);
+  border-left: 2px solid var(--win-border-light);
+  border-right: 2px solid var(--win-border-darker);
+  border-bottom: 2px solid var(--win-border-darker);
+  padding: 3px 10px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.win-btn:active {
+  border-top: 2px solid var(--win-border-darker);
+  border-left: 2px solid var(--win-border-darker);
+  border-right: 2px solid var(--win-border-light);
+  border-bottom: 2px solid var(--win-border-light);
+  padding: 4px 9px 2px 11px;
+}
+.win-btn:disabled {
+  color: var(--win-border-dark);
+  cursor: default;
+}
+
+/* ─── Windows 95 Text Input ─── */
+.win-input {
+  background: white;
+  border-top: 2px solid var(--win-border-darker);
+  border-left: 2px solid var(--win-border-darker);
+  border-right: 2px solid var(--win-border-light);
+  border-bottom: 2px solid var(--win-border-light);
+  padding: 3px 5px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  outline: none;
+  user-select: text;
+}
+
+/* ─── Desktop ─── */
+.desktop {
+  position: fixed;
+  inset: 0;
+  bottom: 36px; /* taskbar height */
+  background-color: var(--desktop-bg);
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.03) 2px,
+      rgba(0, 0, 0, 0.03) 4px
+    );
+  overflow: hidden;
+}
+
+/* ─── Desktop Icons ─── */
+.desktop-icons {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 10px;
+  padding: 12px 8px;
+  height: 100%;
+  width: 100%;
+}
+
+.desktop-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 72px;
+  padding: 4px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 0;
+  text-align: center;
+}
+.desktop-icon:hover {
+  background: rgba(0, 0, 128, 0.3);
+  border: 1px dotted rgba(255,255,255,0.6);
+}
+.desktop-icon.selected {
+  background: rgba(0, 0, 128, 0.6);
+  border: 1px dotted rgba(255,255,255,0.8);
+}
+
+.desktop-icon .icon-img {
+  width: 32px;
+  height: 32px;
+  font-size: 28px;
+  line-height: 32px;
+  image-rendering: pixelated;
+  margin-bottom: 4px;
+}
+
+.desktop-icon .icon-label {
+  color: white;
+  font-size: 11px;
+  font-family: var(--font-ui);
+  text-shadow: 1px 1px 1px #000;
+  word-break: break-word;
+  line-height: 1.2;
+  max-width: 68px;
+}
+
+/* ─── Divider between special & seder sections ─── */
+.icon-group-label {
+  color: rgba(255,255,255,0.7);
+  font-size: 10px;
+  font-family: var(--font-ui);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+  width: 72px;
+  text-align: center;
+  text-shadow: 1px 1px 0 #000;
+}
+
+/* ─── Window ─── */
+.window {
+  position: absolute;
+  background: var(--win-bg);
+  border-top: 2px solid var(--win-border-light);
+  border-left: 2px solid var(--win-border-light);
+  border-right: 2px solid var(--win-border-darker);
+  border-bottom: 2px solid var(--win-border-darker);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.window-titlebar {
+  background: var(--win-titlebar);
+  color: var(--win-titlebar-text);
+  display: flex;
+  align-items: center;
+  padding: 3px 4px;
+  gap: 4px;
+  flex-shrink: 0;
+  cursor: move;
+}
+.window-titlebar.inactive {
+  background: var(--win-titlebar-inactive);
+}
+
+.window-title-icon {
+  font-size: 14px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.window-title-text {
+  flex: 1;
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.window-controls {
+  display: flex;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.window-ctrl-btn {
+  width: 16px;
+  height: 14px;
+  background: var(--win-btn-face);
+  border-top: 1px solid var(--win-border-light);
+  border-left: 1px solid var(--win-border-light);
+  border-right: 1px solid var(--win-border-darker);
+  border-bottom: 1px solid var(--win-border-darker);
+  font-size: 9px;
+  line-height: 12px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-family: 'Marlett', var(--font-ui);
+  padding: 0;
+  flex-shrink: 0;
+}
+.window-ctrl-btn:active {
+  border-top: 1px solid var(--win-border-darker);
+  border-left: 1px solid var(--win-border-darker);
+  border-right: 1px solid var(--win-border-light);
+  border-bottom: 1px solid var(--win-border-light);
+}
+
+.window-menubar {
+  background: var(--win-bg);
+  border-bottom: 1px solid var(--win-border-dark);
+  padding: 2px 4px;
+  display: flex;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.window-body {
+  flex: 1;
+  overflow: auto;
+  padding: 8px;
+  background: var(--win-bg);
+  user-select: text;
+  cursor: default;
+}
+
+/* ─── Taskbar ─── */
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 36px;
+  background: var(--taskbar-bg);
+  border-top: 2px solid var(--win-border-light);
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  gap: 4px;
+  z-index: 9999;
+}
+
+.taskbar-start {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  font-weight: bold;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.taskbar-divider {
+  width: 2px;
+  height: 24px;
+  border-left: 1px solid var(--win-border-darker);
+  border-right: 1px solid var(--win-border-light);
+  flex-shrink: 0;
+}
+
+.taskbar-windows {
+  flex: 1;
+  display: flex;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.taskbar-window-btn {
+  max-width: 140px;
+  min-width: 80px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 6px;
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.taskbar-window-btn.active {
+  border-top: 2px solid var(--win-border-darker);
+  border-left: 2px solid var(--win-border-darker);
+  border-right: 2px solid var(--win-border-light);
+  border-bottom: 2px solid var(--win-border-light);
+  padding: 1px 5px 0 7px;
+}
+
+.taskbar-clock {
+  background: var(--win-bg);
+  border-top: 1px solid var(--win-border-darker);
+  border-left: 1px solid var(--win-border-darker);
+  border-right: 1px solid var(--win-border-light);
+  border-bottom: 1px solid var(--win-border-light);
+  padding: 3px 8px;
+  font-size: 11px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ─── Scrollbar styling ─── */
+::-webkit-scrollbar { width: 16px; height: 16px; }
+::-webkit-scrollbar-track { background: var(--win-bg); }
+::-webkit-scrollbar-thumb {
+  background: var(--win-bg);
+  border-top: 1px solid var(--win-border-light);
+  border-left: 1px solid var(--win-border-light);
+  border-right: 1px solid var(--win-border-darker);
+  border-bottom: 1px solid var(--win-border-darker);
+}
+::-webkit-scrollbar-button {
+  background: var(--win-bg);
+  border-top: 1px solid var(--win-border-light);
+  border-left: 1px solid var(--win-border-light);
+  border-right: 1px solid var(--win-border-darker);
+  border-bottom: 1px solid var(--win-border-darker);
+  display: block;
+  height: 16px;
+  width: 16px;
+}
