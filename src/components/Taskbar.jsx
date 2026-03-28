@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useSedar } from '../context/SedarContext';
 import { SEDER_STEPS, SPECIAL_MODULES } from '../config/sederConfig';
 
+
 const ALL_MODULES = [
   ...SPECIAL_MODULES,
   ...SEDER_STEPS.map((s) => ({
@@ -16,7 +17,7 @@ function getModuleMeta(id) {
 }
 
 export default function Taskbar() {
-  const { openWindows, focusWindow, minimizeWindow, resetState } = useSedar();
+  const { openWindows, openWindow, focusWindow, minimizeWindow, resetState } = useSedar();
   const [time, setTime] = useState(new Date());
   const [showMenu, setShowMenu] = useState(false);
 
@@ -78,6 +79,20 @@ export default function Taskbar() {
           </button>
         </div>
       )}
+
+      <div className="taskbar-divider" />
+
+      {/* Quick-launch utils */}
+      {SPECIAL_MODULES.map((mod) => (
+        <button
+          key={mod.id}
+          className="win-btn taskbar-quicklaunch"
+          title={mod.name}
+          onClick={() => openWindow(mod.id, mod.windowSize)}
+        >
+          <span style={{ fontSize: 16 }}>{mod.icon}</span>
+        </button>
+      ))}
 
       <div className="taskbar-divider" />
 

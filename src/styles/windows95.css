@@ -155,18 +155,6 @@ html, body, #root {
   max-width: 68px;
 }
 
-/* ─── Divider between special & seder sections ─── */
-.icon-group-label {
-  color: rgba(255,255,255,0.7);
-  font-size: 10px;
-  font-family: var(--font-ui);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-top: 4px;
-  width: 72px;
-  text-align: center;
-  text-shadow: 1px 1px 0 #000;
-}
 
 /* ─── Window ─── */
 .window {
@@ -300,6 +288,16 @@ html, body, #root {
   display: flex;
   gap: 2px;
   overflow: hidden;
+}
+
+.taskbar-quicklaunch {
+  width: 28px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  flex-shrink: 0;
 }
 
 .taskbar-window-btn {
