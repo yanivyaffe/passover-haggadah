@@ -51,7 +51,11 @@ All state — who registered, wine count, which windows are open and where — i
 
 ## How to Run
 
+**Prerequisites:** [Node.js](https://nodejs.org) v18 or higher.
+
 ```bash
+git clone https://github.com/yanivyaffe/passover-haggadah.git
+cd passover-haggadah
 npm install
 npm run dev
 ```
