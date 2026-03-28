@@ -169,7 +169,7 @@ export const SPECIAL_MODULES = [
     name: 'Games.exe',
     description: 'Passover trivia & games',
     icon: '🎲',
-    windowSize: { width: 560, height: 480 },
+    windowSize: { width: 560, height: 580 },
   },
 ];
 
