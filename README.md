@@ -102,11 +102,67 @@ Everything content-related lives in **`src/config/sederConfig.js`**:
 
 - `PARTICIPANT_ICONS` — the 10 avatar options (id, label, image path)
 - `SEDER_STEPS` — names and icons for the desktop step programs
-- `HALLEL_SONGS` — YouTube video IDs for the three songs in the Hallel module
+- `HALLEL_SONGS` — YouTube video IDs for the songs in the Hallel module
 - `SEDER_PLATE_ITEMS` — the six plate items, their positions, and description text
 - `WINE_OCCASIONS` — labels for the four cups
+- `SEDER_MEDIA` — multimedia resources (videos, links, music) shown in each seder step
 
 Individual readings are in `src/modules/` — one file per seder step.
+
+---
+
+## Adding Multimedia
+
+Each seder step has a collapsible **📺 Multimedia Resources** section at the bottom of its window. All resources are configured in `SEDER_MEDIA` inside `src/config/sederConfig.js`.
+
+### Add a YouTube embed
+
+Find the section you want (e.g. `kadesh`, `maggid`, `hallel`) and add an entry with a `youtubeId`:
+
+```js
+kadesh: [
+  // existing items...
+  {
+    badge: 'Video',
+    title: 'My Video Title',
+    description: 'One sentence about why this is relevant.',
+    youtubeId: 'abc123xyz',   // the part after watch?v= or /shorts/
+  },
+],
+```
+
+The video will appear as a click-to-play black bar — it doesn't load until clicked.
+
+### Add an external link
+
+Use `href` instead of (or in addition to) `youtubeId`:
+
+```js
+{
+  badge: 'Image',
+  title: 'Some Article or Resource',
+  description: 'Brief context.',
+  href: 'https://example.com/article',
+},
+```
+
+### Badge options
+
+The `badge` value controls the colored label tag. Pick whichever fits:
+
+| Badge | Use for |
+|---|---|
+| `Video` | YouTube clips, PBS segments |
+| `Music` | Songs, playlists |
+| `Image` | Photos, infographics, Wikimedia |
+| `Document` | Reports, PDFs |
+| `Brief` | Policy hubs, reference pages |
+
+### Section keys
+
+The keys in `SEDER_MEDIA` match the seder step IDs:
+
+`kadesh` · `urchatz` · `karpas` · `yachatz` · `maggid` · `rachtzah` · `motzi-matzah` · `maror` · `korech` · `shulchan-orech` · `tzafun` · `barech` · `hallel` · `nirtzah`
 
 ---
 
