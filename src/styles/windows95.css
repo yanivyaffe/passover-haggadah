@@ -93,14 +93,9 @@ html, body, #root {
   inset: 0;
   bottom: 36px; /* taskbar height */
   background-color: var(--desktop-bg);
-  background-image:
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 2px,
-      rgba(0, 0, 0, 0.03) 2px,
-      rgba(0, 0, 0, 0.03) 4px
-    );
+  background-image: url('/desert-desktop.avif');
+  background-size: cover;
+  background-position: center;
   overflow: hidden;
 }
 

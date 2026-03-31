@@ -11,9 +11,8 @@ const DRUNK_STATES = [
 
 function WineCup({ index, filled, onClick }) {
   return (
-    <div className="wine-cup-wrapper" onClick={onClick} title={`Cup ${index + 1}: ${WINE_OCCASIONS[index]}`}>
+    <div className="wine-cup-wrapper" onClick={onClick} title={WINE_OCCASIONS[index]}>
       <svg width="50" height="80" viewBox="0 0 50 80" className="wine-cup">
-        {/* Cup outline */}
         <path
           d="M10 5 L40 5 L35 45 Q25 52 15 45 Z"
           fill={filled ? '#6b21a8' : 'none'}
@@ -21,7 +20,6 @@ function WineCup({ index, filled, onClick }) {
           strokeWidth="2"
           style={{ transition: 'fill 0.4s ease' }}
         />
-        {/* Wine fill animation layer */}
         {filled && (
           <path
             d="M11 8 L39 8 L34.5 43 Q25 50 15.5 43 Z"
@@ -29,11 +27,8 @@ function WineCup({ index, filled, onClick }) {
             opacity="0.9"
           />
         )}
-        {/* Stem */}
         <line x1="25" y1="45" x2="25" y2="68" stroke="#4a0e8f" strokeWidth="2.5" />
-        {/* Base */}
         <line x1="12" y1="68" x2="38" y2="68" stroke="#4a0e8f" strokeWidth="3" />
-        {/* Cup rim */}
         <line x1="10" y1="5" x2="40" y2="5" stroke="#4a0e8f" strokeWidth="2" />
         <defs>
           <linearGradient id="wineGradient" x1="0" y1="0" x2="0" y2="1">
@@ -42,10 +37,6 @@ function WineCup({ index, filled, onClick }) {
           </linearGradient>
         </defs>
       </svg>
-      <div className="wine-cup-label">
-        <strong>Cup {index + 1}</strong><br />
-        {filled ? '🍷 Filled!' : '○ Empty'}
-      </div>
     </div>
   );
 }
@@ -55,24 +46,20 @@ export default function WineCounter() {
   const drunkState = DRUNK_STATES[wineCount];
 
   function handleCupClick(index) {
-    // Clicking a filled cup empties from that cup onward; clicking empty fills up to that cup
     if (index < wineCount) {
-      setWineCount(index); // undo back to this cup
+      setWineCount(index);
     } else {
-      setWineCount(index + 1); // fill up to this cup
+      setWineCount(index + 1);
     }
   }
 
   return (
     <div style={{ padding: '8px 0' }}>
-      <div style={{ fontFamily: 'var(--font-display)', fontSize: 22, color: '#000080', marginBottom: 10 }}>
+      <div style={{ fontFamily: 'var(--font-display)', fontSize: 22, color: '#000080', marginBottom: 16 }}>
         🍷 The Four Cups of Wine
       </div>
-      <div style={{ fontSize: 11, color: '#444', marginBottom: 16 }}>
-        Click a cup to fill it. Click a filled cup to undo. There are four cups total — one for each promise God made to the Israelites.
-      </div>
 
-      <div className="wine-counter">
+      <div className="wine-counter" style={{ alignItems: 'center' }}>
         <div className="wine-cups">
           {WINE_OCCASIONS.map((occasion, i) => (
             <WineCup
@@ -101,14 +88,6 @@ export default function WineCounter() {
           <strong>Current cup:</strong> {WINE_OCCASIONS[wineCount - 1]}
         </div>
       )}
-
-      <div style={{ marginTop: 12, borderTop: '1px solid #808080', paddingTop: 8 }}>
-        {WINE_OCCASIONS.map((occ, i) => (
-          <div key={i} style={{ fontSize: 11, padding: '2px 0', color: i < wineCount ? '#000080' : '#888' }}>
-            {i < wineCount ? '✓' : '○'} Cup {i + 1}: {occ}
-          </div>
-        ))}
-      </div>
     </div>
   );
 }
