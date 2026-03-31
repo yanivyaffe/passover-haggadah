@@ -105,15 +105,15 @@ Everything content-related lives in **`src/config/sederConfig.js`**:
 - `HALLEL_SONGS` — YouTube video IDs for the songs in the Hallel module
 - `SEDER_PLATE_ITEMS` — the six plate items, their positions, and description text
 - `WINE_OCCASIONS` — labels for the four cups
-- `SEDER_MEDIA` — multimedia resources (videos, links, music) shown in each seder step
+- `SEDER_MEDIA` — bonus content (videos, links, music) shown in each seder step
 
 Individual readings are in `src/modules/` — one file per seder step.
 
 ---
 
-## Adding Multimedia
+## Adding Bonus Content
 
-Each seder step has a collapsible **📺 Multimedia Resources** section at the bottom of its window. All resources are configured in `SEDER_MEDIA` inside `src/config/sederConfig.js`.
+Each seder step has a collapsible **🎁 Bonus Content** button at the bottom of its window. All resources are configured in `SEDER_MEDIA` inside `src/config/sederConfig.js`.
 
 ### Add a YouTube embed
 

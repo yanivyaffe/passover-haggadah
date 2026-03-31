@@ -81,7 +81,7 @@ export default function MediaResources({ items }) {
         onClick={() => setOpen((o) => !o)}
         style={{ width: '100%', textAlign: 'left', marginBottom: open ? 8 : 0 }}
       >
-        {open ? '▼' : '▶'} 📺 Multimedia Resources ({items.length})
+        {open ? '▼' : '▶'} 🎁 Bonus Content ({items.length})
       </button>
       {open && items.map((item, i) => <MediaCard key={i} {...item} />)}
     </div>
