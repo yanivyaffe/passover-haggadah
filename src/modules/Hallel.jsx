@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ReaderBadge from '../components/ReaderBadge';
-import { HALLEL_SONGS } from '../config/sederConfig';
+import { HALLEL_SONGS, SEDER_MEDIA } from '../config/sederConfig';
+import MediaResources from '../components/MediaResources';
 
 export default function Hallel() {
   const [loadedSong, setLoadedSong] = useState(null);
@@ -58,6 +59,8 @@ export default function Hallel() {
       <p>After Hallel, fill the fourth and final cup of wine. Recite the blessing and drink.</p>
       <span className="hebrew">בָּרוּךְ אַתָּה יְיָ אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם, בּוֹרֵא פְּרִי הַגָּפֶן</span>
       <blockquote>🍷 Drink the fourth cup — the Cup of Praise! L'Chaim!</blockquote>
+
+      <MediaResources items={SEDER_MEDIA.hallel} />
     </div>
   );
 }

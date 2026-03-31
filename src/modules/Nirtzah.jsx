@@ -1,4 +1,6 @@
 import ReaderBadge from '../components/ReaderBadge';
+import MediaResources from '../components/MediaResources';
+import { SEDER_MEDIA } from '../config/sederConfig';
 
 export default function Nirtzah() {
   return (
@@ -54,6 +56,8 @@ export default function Nirtzah() {
         <strong>Chag Sameach! חַג שָׂמֵחַ</strong><br />
         Happy Passover from our family to yours! 🫓🍷✨
       </div>
+
+      <MediaResources items={SEDER_MEDIA.nirtzah} />
     </div>
   );
 }

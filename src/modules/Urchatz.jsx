@@ -1,3 +1,6 @@
+import MediaResources from '../components/MediaResources';
+import { SEDER_MEDIA } from '../config/sederConfig';
+
 export default function Urchatz() {
   return (
     <div className="reading-content">
@@ -27,6 +30,8 @@ export default function Urchatz() {
       <p style={{ marginTop: 10, fontStyle: 'italic', color: '#666' }}>
         Wash your hands and return to the table.
       </p>
+
+      <MediaResources items={SEDER_MEDIA.urchatz} />
     </div>
   );
 }

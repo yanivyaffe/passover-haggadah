@@ -1,3 +1,6 @@
+import MediaResources from '../components/MediaResources';
+import { SEDER_MEDIA } from '../config/sederConfig';
+
 export default function ShulchanOrech() {
   return (
     <div className="reading-content">
@@ -31,6 +34,8 @@ export default function ShulchanOrech() {
       <p style={{ textAlign: 'center', marginTop: 12, color: '#666' }}>
         Resume the seder after dinner with Step 11: Tzafun (finding the afikomen).
       </p>
+
+      <MediaResources items={SEDER_MEDIA['shulchan-orech']} />
     </div>
   );
 }

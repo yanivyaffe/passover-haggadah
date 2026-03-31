@@ -1,4 +1,6 @@
 import ReaderBadge from '../components/ReaderBadge';
+import MediaResources from '../components/MediaResources';
+import { SEDER_MEDIA } from '../config/sederConfig';
 
 export default function Maggid() {
   return (
@@ -94,11 +96,38 @@ export default function Maggid() {
         As it is written: "You shall tell your child on that day: it is because of what God did for <em>me</em> when I left Egypt."
       </blockquote>
 
+      <h3>A Contemporary Reading</h3>
+      <p style={{ fontStyle: 'italic', fontSize: 12, color: '#666', marginBottom: 6 }}>
+        — Contributed by Steve Yaffe
+      </p>
+      <blockquote style={{ lineHeight: 1.7 }}>
+        And there arose another Pharaoh who knew not Joseph. And he accused the Hebrews of malign intent and fraud upon the nation.
+        And he sent his masked agents to terrorize them, separating them from their neighbors before casting them out and maligning them in word and deed.
+        <br /><br />
+        At this table, we remember not only Egypt, but every place where fear shadows dignity.
+        In the land of lakes, there arose a decree: strangers would be taken, families divided, voices silenced.
+        And the people asked, <em>"Are we not commanded to remember that we were once strangers?"</em>
+        <br /><br />
+        So, they told the story. They set extra chairs, not for Elijah alone, but for neighbors in hiding.
+        They spoke names softly, then boldly. They lit candles not only for freedom long ago, but for courage now.
+        <br /><br />
+        And, like the midwives who defied Pharaoh, there were those who chose conscience over command.
+        They organized, they sheltered, they bore witness. Not with swords, but with presence, red whistles and iPhones.
+        Older men from the land of the lakes drove home the children of their neighbors who didn't look like them,
+        to keep them safe. And they died at the hands of a 79-year-old Pharaoh's minions for following their north star.
+        <br /><br />
+        <strong>"Dayenu,"</strong> they said — this would be enough: to stand, to refuse indifference.
+        And the youngest asked, <em>"Why is this night different?"</em> Because tonight, we remember that
+        liberation is unfinished — and we are part of the telling.
+      </blockquote>
+
       <h3>Second Cup of Wine</h3>
       <ReaderBadge slotIndex={12} cue="leads the blessing" />
       <p>Fill the second cup and recite the blessing. Drink while reclining.</p>
       <span className="hebrew">בָּרוּךְ אַתָּה יְיָ אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם, בּוֹרֵא פְּרִי הַגָּפֶן</span>
       <blockquote>🍷 Drink the second cup of wine — the Cup of Deliverance!</blockquote>
+
+      <MediaResources items={SEDER_MEDIA.maggid} />
     </div>
   );
 }

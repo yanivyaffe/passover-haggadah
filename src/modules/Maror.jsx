@@ -1,4 +1,6 @@
 import ReaderBadge from '../components/ReaderBadge';
+import MediaResources from '../components/MediaResources';
+import { SEDER_MEDIA } from '../config/sederConfig';
 
 export default function Maror() {
   return (
@@ -30,6 +32,8 @@ export default function Maror() {
         Dip the bitter herbs in charoset before eating. The sweet charoset softens the bitterness slightly —
         a reminder that even in the darkest times, sweetness exists.
       </p>
+
+      <MediaResources items={SEDER_MEDIA.maror} />
     </div>
   );
 }

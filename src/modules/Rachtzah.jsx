@@ -1,4 +1,6 @@
 import ReaderBadge from '../components/ReaderBadge';
+import MediaResources from '../components/MediaResources';
+import { SEDER_MEDIA } from '../config/sederConfig';
 
 export default function Rachtzah() {
   return (
@@ -24,6 +26,8 @@ export default function Rachtzah() {
       <blockquote>
         🚿 After washing, do not speak until after eating the matzah — go straight to Motzi-Matzah!
       </blockquote>
+
+      <MediaResources items={SEDER_MEDIA.rachtzah} />
     </div>
   );
 }

@@ -1,4 +1,6 @@
 import ReaderBadge from '../components/ReaderBadge';
+import MediaResources from '../components/MediaResources';
+import { SEDER_MEDIA } from '../config/sederConfig';
 
 export default function Tzafun() {
   return (
@@ -36,6 +38,8 @@ export default function Tzafun() {
       <p style={{ fontStyle: 'italic', color: '#444', marginTop: 8 }}>
         After eating the afikomen, nothing else is eaten for the rest of the seder.
       </p>
+
+      <MediaResources items={SEDER_MEDIA.tzafun} />
     </div>
   );
 }

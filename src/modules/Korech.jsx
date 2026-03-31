@@ -1,4 +1,6 @@
 import ReaderBadge from '../components/ReaderBadge';
+import MediaResources from '../components/MediaResources';
+import { SEDER_MEDIA } from '../config/sederConfig';
 
 export default function Korech() {
   return (
@@ -34,6 +36,8 @@ export default function Korech() {
         Some say the charoset represents the mortar, and the bitter herbs — despite the sweetness — remind us
         that even comfort cannot fully mask the taste of oppression.
       </blockquote>
+
+      <MediaResources items={SEDER_MEDIA.korech} />
     </div>
   );
 }

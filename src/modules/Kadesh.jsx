@@ -1,4 +1,6 @@
 import ReaderBadge from '../components/ReaderBadge';
+import MediaResources from '../components/MediaResources';
+import { SEDER_MEDIA } from '../config/sederConfig';
 
 export default function Kadesh() {
   return (
@@ -27,6 +29,8 @@ export default function Kadesh() {
       <p>Blessed are You, Lord our God, Ruler of the universe, who has kept us alive, sustained us, and brought us to this season.</p>
 
       <blockquote>🍷 Drink the first cup of wine while reclining to the left — a sign of freedom!</blockquote>
+
+      <MediaResources items={SEDER_MEDIA.kadesh} />
     </div>
   );
 }

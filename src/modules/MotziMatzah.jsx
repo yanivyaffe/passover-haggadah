@@ -1,4 +1,6 @@
 import ReaderBadge from '../components/ReaderBadge';
+import MediaResources from '../components/MediaResources';
+import { SEDER_MEDIA } from '../config/sederConfig';
 
 export default function MotziMatzah() {
   return (
@@ -30,6 +32,8 @@ export default function MotziMatzah() {
         🫓 The leader breaks pieces from the top and middle matzah and distributes to everyone at the table.
         Eat the matzah while reclining to the left — savoring the taste of freedom!
       </blockquote>
+
+      <MediaResources items={SEDER_MEDIA['motzi-matzah']} />
     </div>
   );
 }

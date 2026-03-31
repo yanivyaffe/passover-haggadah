@@ -1,4 +1,6 @@
 import ReaderBadge from '../components/ReaderBadge';
+import MediaResources from '../components/MediaResources';
+import { SEDER_MEDIA } from '../config/sederConfig';
 
 export default function Barech() {
   return (
@@ -41,6 +43,8 @@ export default function Barech() {
       <p>Fill the third cup. Recite the blessing and drink while reclining.</p>
       <span className="hebrew">בָּרוּךְ אַתָּה יְיָ אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם, בּוֹרֵא פְּרִי הַגָּפֶן</span>
       <blockquote>🍷 Drink the third cup — the Cup of Redemption!</blockquote>
+
+      <MediaResources items={SEDER_MEDIA.barech} />
     </div>
   );
 }

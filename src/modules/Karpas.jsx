@@ -1,4 +1,6 @@
 import ReaderBadge from '../components/ReaderBadge';
+import MediaResources from '../components/MediaResources';
+import { SEDER_MEDIA } from '../config/sederConfig';
 
 export default function Karpas() {
   return (
@@ -30,6 +32,8 @@ export default function Karpas() {
         Eat the karpas. This small act of dipping is one of the things that makes the seder night different —
         and is meant to intrigue the children into asking questions.
       </p>
+
+      <MediaResources items={SEDER_MEDIA.karpas} />
     </div>
   );
 }

@@ -1,4 +1,6 @@
 import ReaderBadge from '../components/ReaderBadge';
+import MediaResources from '../components/MediaResources';
+import { SEDER_MEDIA } from '../config/sederConfig';
 
 export default function Yachatz() {
   return (
@@ -31,6 +33,8 @@ export default function Yachatz() {
       <p style={{ fontStyle: 'italic', color: '#444' }}>
         Hide the afikomen somewhere in the room. The children will search for it later!
       </p>
+
+      <MediaResources items={SEDER_MEDIA.yachatz} />
     </div>
   );
 }

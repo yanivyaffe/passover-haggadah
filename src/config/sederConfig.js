@@ -244,6 +244,16 @@ export const HALLEL_SONGS = [
     description: 'The classic Passover song of gratitude — "It would have been enough!"',
   },
   {
+    title: "Blowin' in the Wind — Bob Dylan",
+    youtubeId: 'cQBVgtcR2rM',
+    description: 'A protest anthem that asks the timeless questions of freedom and justice — sing the chorus together.',
+  },
+  {
+    title: 'Mah Nishtanah — The Four Questions',
+    youtubeId: 'xsWh4YaD3HE',
+    description: 'The Four Questions sung in Hebrew — great for kids to join in.',
+  },
+  {
     title: 'Chad Gadya',
     youtubeId: 'UXCdAfOmMT4',
     description: 'A cumulative Aramaic song about a little goat — sung at the end of the seder',
@@ -254,3 +264,81 @@ export const HALLEL_SONGS = [
     description: 'Who Knows One? A counting song with Jewish themes',
   },
 ];
+
+// Curated multimedia resources per seder section
+export const SEDER_MEDIA = {
+  kadesh: [
+    { badge: 'Video', title: 'Opening Seder Clip', description: 'Begin the evening with this clip before the first section.', youtubeId: 'qKqIvv4DfIc' },
+    { badge: 'Video', title: 'Global Refugee Trends (2:18)', description: 'Refugee and climate-displacement primer that frames the opening question about forced movement and safe belonging.', href: 'https://www.pbs.org/video/world-refugee-day-2024-solutions-largest-displacement-crisis-record' },
+    { badge: 'Image', title: 'Refugees on a Boat — Wikimedia', description: 'Historical rescue image: migration has always mixed danger, policy, and survival.', href: 'https://commons.wikimedia.org/wiki/File%3ARefugees_on_a_boat.jpg' },
+    { badge: 'Image', title: 'UNHCR Refugees & Migrants Video Portal', description: 'UN media index for refugee and migration stories.', href: 'https://refugeesmigrants.un.org/videos' },
+  ],
+  urchatz: [
+    { badge: 'Video', title: 'WHO — Vaccine Equity (2:30)', description: 'WHO discussion on vaccine equity — useful for the public-health thread about unequal care.', href: 'https://www.pbs.org/video/urgent-plea-vaccine-equity-xtpirz/' },
+    { badge: 'Image', title: 'UNICEF WASH Overview', description: 'UNICEF clean-water and hygiene overview for discussion and visual cue cards.', href: 'https://www.unicef.org/water-sanitation-and-hygiene-wash' },
+  ],
+  karpas: [
+    { badge: 'Video', title: 'Global Refugee Trends (2:18)', description: 'Current-event reflection on climate, displacement, and life after crisis.', href: 'https://www.pbs.org/video/world-refugee-day-2024-solutions-largest-displacement-crisis-record' },
+    { badge: 'Image', title: 'UNHCR: No Escape — Climate, Conflict & Displacement', description: 'Report connecting climate change, conflict, and forced displacement.', href: 'https://www.unhcr.org/publications/no-escape-frontlines-climate-change-conflict-and-forced-displacement' },
+    { badge: 'Music', title: 'Hava Nagila — Traditional Klezmer', description: 'Traditional melody to keep the room in a celebratory, forward-moving rhythm.', youtubeId: 'jYCYa_eLhh0' },
+  ],
+  yachatz: [
+    { badge: 'Video', title: 'FRONTLINE: Separated — Children at the Border', description: 'Family-separation framing for the hidden-piece concept.', href: 'https://www.pbs.org/video/separated-children-border-preview-qxotij/' },
+    { badge: 'Image', title: 'Refugee Children — Image Archive', description: 'Photo page for grounding the grief in this section.', href: 'https://commons.wikimedia.org/wiki/File%3ARefugee_kids.jpg' },
+    { badge: 'Music', title: 'Mah Nishtanah in Hebrew (2:45)', description: 'Optional song cue before the matzah break ritual.', youtubeId: 'xsWh4YaD3HE' },
+  ],
+  maggid: [
+    { badge: 'Video', title: 'PBS — Iran Protests: Regime Crackdown', description: 'Modern speech-restriction narrative — who is allowed to speak?', href: 'https://www.pbs.org/video/inside-the-iranian-uprising-preview/' },
+    { badge: 'Image', title: 'Amnesty: Iran Internet Shutdown Report', description: 'Rights report context for repression and naming who is silenced.', href: 'https://www.amnesty.org/en/latest/news/2026/01/internet-shutdown-in-iran-hides-violations-in-escalating-protests/' },
+    { badge: 'Video', title: 'Dave Chappelle: Displaced People', description: 'Chappelle on displacement and powerlessness.', youtubeId: 'KhCbR_LpQjI' },
+    { badge: 'Video', title: 'Dave Chappelle: Analogy of a Black Slave Owner to Israel', description: "Chappelle's perspective on oppression cycles and the Israel-Palestine dynamic.", youtubeId: '3P6692Bdy7U' },
+    { badge: 'Video', title: 'Cancel Culture & Antisemitism', description: 'Exploring antisemitism and cancel culture in contemporary discourse.', youtubeId: 'R90_EeRP2wc' },
+    { badge: 'Video', title: 'Growing Up With Israeli Parents', description: 'A personal perspective on Israeli-American identity.', youtubeId: 'Evx3KjaScPA' },
+    { badge: 'Music', title: 'Maccabeats — Dayenu', description: 'A lively, family-friendly version of Dayenu.', href: 'https://maccabeats.bandcamp.com/track/dayenu' },
+  ],
+  rachtzah: [
+    { badge: 'Video', title: 'UNICEF WASH in Life', description: 'Short sanitation and public-health messaging supporting the inequity reading.', href: 'https://www.unicefusa.org/videos/unicef-wont-stop-providing-safe-water-and-hygiene-1' },
+    { badge: 'Image', title: 'UNICEF WASH Visual Hub', description: 'Infographic and image hub on water, sanitation, and child health.', href: 'https://www.unicef.org/wash' },
+    { badge: 'Video', title: 'Hatzalah — The Jewish Emergency Volunteers', description: 'Story of the volunteer Jewish emergency response network.', youtubeId: 'zxpdMhA7ufE' },
+  ],
+  'motzi-matzah': [
+    { badge: 'Video', title: 'What is Voter Suppression? (2:52)', description: 'Timeline on modern barriers to equal civic voice.', href: 'https://www.pbs.org/video/what-is-voter-suppression-ahfvlx/' },
+    { badge: 'Document', title: 'Brennan Center: State Voting Laws Roundup', description: 'Detailed state-by-state survey of laws affecting voting access and enforcement.', href: 'https://www.brennancenter.org/our-work/research-reports/state-voting-laws-roundup-2025-review' },
+    { badge: 'Document', title: 'Brennan Center: Redistricting Litigation Roundup', description: 'Federal and state map challenges on minority dilution and partisan advantage.', href: 'https://www.brennancenter.org/our-work/research-reports/redistricting-litigation-roundup-0' },
+    { badge: 'Brief', title: 'ACLU Voting Rights Hub', description: 'State-and-campaign updates on voting rights policy and litigation.', href: 'https://www.aclu.org/issues/voting-rights' },
+  ],
+  maror: [
+    { badge: 'Video', title: 'Stop the Violence March (2:15)', description: 'Short clip followed by data on police violence in American cities.', href: 'https://www.pbs.org/video/protesters-look-to-march-again-as-chicago-police-hold-them-back-zdin1k/' },
+    { badge: 'Image', title: 'Mapping Police Violence', description: 'Data and city-level tools tracking police violence across the US.', href: 'https://mappingpoliceviolence.squarespace.com/' },
+    { badge: 'Image', title: 'Historic Protest Imagery — Wikimedia', description: 'Visual reminder that policy pain has always been visible in public protest.', href: 'https://commons.wikimedia.org/wiki/File%3A2014-02-02_Patumwan_intersection_protest_site_fake_polling_station_01.jpg' },
+  ],
+  korech: [
+    { badge: 'Video', title: 'UNHCR Refugees & Migrants Playlist', description: 'Short clips on policy contradictions across borders.', href: 'https://refugeesmigrants.un.org/videos' },
+    { badge: 'Image', title: 'UNHCR: People-Focused Stories', description: 'Story landing page for quick fact-check context on displacement.', href: 'https://www.unhcr.org/refugees-and-migrants/' },
+    { badge: 'Video', title: 'Dave Chappelle Questions Jimmy Carter', description: 'Chappelle on questions of power and accountability.', youtubeId: 'd_sUyGXTlJc' },
+  ],
+  'shulchan-orech': [
+    { badge: 'Video', title: 'Rice and Beans — Dinner Clip', description: 'A fun opening clip for the meal.', youtubeId: '5A_9XD9uuC8' },
+    { badge: 'Video', title: 'Sebastian Maniscalco — Comedy', description: 'Some laughs to enjoy with dinner.', youtubeId: 'bbGSI0Ahtac' },
+    { badge: 'Image', title: 'World Central Kitchen — We Feed People', description: 'Food justice reflection for the meal table.', href: 'https://wck.org/wefeedpeople/' },
+    { badge: 'Image', title: 'WFP: Escalating Hunger Crisis', description: 'UN media page on feeding gaps in conflict and crisis zones.', href: 'https://www.wfp.org/videos/wfp-news-video-new-report-warns-escalating-hunger-due-conflict-displacement-and-humanitarian-funding-shortfalls' },
+  ],
+  tzafun: [
+    { badge: 'Video', title: 'PBS / FRONTLINE: Separated', description: 'FRONTLINE preview on family separation at the border.', href: 'https://www.pbs.org/video/separated-children-border-preview-qxotij/' },
+    { badge: 'Image', title: 'UNHCR Media Stories', description: 'Media and stills for hidden families and legal invisibility themes.', href: 'https://www.unhcr.org/media/' },
+    { badge: 'Music', title: 'Maccabeats — Dayenu', description: 'Optional musical bridge after the afikomen reveal.', href: 'https://maccabeats.bandcamp.com/track/dayenu' },
+  ],
+  barech: [
+    { badge: 'Video', title: 'UNHCR Climate Displacement Explainer (2:18)', description: 'Translate gratitude into climate justice action.', href: 'https://www.pbs.org/video/world-refugee-day-2024-solutions-largest-displacement-crisis-record' },
+    { badge: 'Image', title: 'UNHCR No Escape: Climate, Conflict & Displacement', description: 'Policy context for climate-linked displacement and adaptation.', href: 'https://www.unhcr.org/media/no-escape-frontlines-climate-change-conflict-and-forced-displacement' },
+    { badge: 'Image', title: 'Harvard: State of the Nation\'s Housing 2025', description: 'Housing stress and affordability visuals for economic dignity conversation.', href: 'https://www.jchs.harvard.edu/state-nations-housing-2025' },
+  ],
+  hallel: [
+    { badge: 'Video', title: 'Aish Music Video: Ma Nishtana', description: 'Modern family-facing song and lyric video for intergenerational participation.', href: 'https://aish.com/ma-nishtana-passover-music-video/' },
+  ],
+  nirtzah: [
+    { badge: 'Video', title: 'FRONTLINE: Voter Suppression Short History', description: 'Closing civic segment anchor with voting-rights follow-up questions.', href: 'https://www.pbs.org/video/what-is-voter-suppression-ahfvlx/' },
+    { badge: 'Image', title: 'Brennan Center 2026 Policy Update', description: 'Actionable data snapshot for your final movement plan.', href: 'https://www.brennancenter.org/our-work/research-reports/state-voting-laws-roundup-2025-review' },
+    { badge: 'Image', title: 'Historic Polling Station — Wikimedia', description: 'Historical image bridging present civic obligations and memory.', href: 'https://commons.wikimedia.org/wiki/File%3APOLLING_STATION.jpg' },
+  ],
+};
