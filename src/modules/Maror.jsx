@@ -1,6 +1,29 @@
+import { useState } from 'react';
 import ReaderBadge from '../components/ReaderBadge';
 import MediaResources from '../components/MediaResources';
 import { SEDER_MEDIA } from '../config/sederConfig';
+
+function VideoEmbed({ youtubeId, label }) {
+  const [loaded, setLoaded] = useState(false);
+  return loaded ? (
+    <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, margin: '8px 0' }}>
+      <iframe
+        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
+        src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1`}
+        title={label}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
+    </div>
+  ) : (
+    <div
+      onClick={() => setLoaded(true)}
+      style={{ background: '#000', height: 44, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', margin: '8px 0' }}
+    >
+      <span style={{ color: '#fff', fontSize: 11, fontFamily: 'var(--font-ui)' }}>▶ Click to play</span>
+    </div>
+  );
+}
 
 export default function Maror() {
   return (
@@ -33,6 +56,7 @@ export default function Maror() {
         a reminder that even in the darkest times, sweetness exists.
       </p>
 
+      <VideoEmbed youtubeId="bbGSI0Ahtac" label="Maror" />
       <MediaResources items={SEDER_MEDIA.maror} />
     </div>
   );
