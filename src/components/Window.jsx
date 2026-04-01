@@ -75,7 +75,7 @@ export default function Window({ id, title, icon, children, defaultSize }) {
             </button>
           </div>
         </div>
-        <div className="window-body" style={{ fontSize: `${zoom}em` }}>
+        <div className="window-body" style={{ zoom }}>
           {children}
         </div>
       </div>
