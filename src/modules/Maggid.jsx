@@ -97,6 +97,8 @@ export default function Maggid() {
         Had the Holy One not brought our ancestors out of Egypt, then we, our children, and our children's children would still be enslaved to Pharaoh in Egypt.
       </p>
 
+      <FacebookEmbed href="https://www.facebook.com/reel/1642404167070705" label="We Were Slaves" />
+
       <h3>The Four Sons — אַרְבָּעָה בָּנִים</h3>
       <p>
         The Torah speaks of four types of children — and teaches us to meet each one where they are.
