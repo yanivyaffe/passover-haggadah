@@ -25,6 +25,31 @@ function VideoEmbed({ youtubeId, label }) {
   );
 }
 
+function FacebookEmbed({ href, label }) {
+  const [loaded, setLoaded] = useState(false);
+  const src = `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(href)}&show_text=false`;
+  return loaded ? (
+    <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, margin: '8px 0' }}>
+      <iframe
+        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
+        src={src}
+        title={label}
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        allowFullScreen
+        scrolling="no"
+      />
+    </div>
+  ) : (
+    <div
+      onClick={() => setLoaded(true)}
+      style={{ background: '#1877f2', height: 44, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', margin: '8px 0', gap: 6 }}
+    >
+      <span style={{ color: '#fff', fontSize: 14 }}>f</span>
+      <span style={{ color: '#fff', fontSize: 11, fontFamily: 'var(--font-ui)' }}>▶ Click to play</span>
+    </div>
+  );
+}
+
 const HaLachmaVideo = () => <VideoEmbed youtubeId="ZrjclpiVaEc" label="Ha Lachma Anya" />;
 
 const DayenuPlayer = () => <VideoEmbed youtubeId="sLG1bYtCFgk" label="Dayenu" />;
@@ -212,6 +237,7 @@ export default function Maggid() {
         In every generation, each person is obligated to see themselves as if they personally left Egypt.
         As it is written: "You shall tell your child on that day: it is because of what God did for <em>me</em> when I left Egypt."
       </blockquote>
+      <FacebookEmbed href="https://www.facebook.com/share/r/18Viny9wmo/" label="In Every Generation" />
 
       <h3>Second Cup of Wine</h3>
       <ReaderBadge slotIndex={12} cue="leads the blessing" />
