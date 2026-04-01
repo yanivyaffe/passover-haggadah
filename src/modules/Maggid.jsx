@@ -72,6 +72,59 @@ export default function Maggid() {
         Had the Holy One not brought our ancestors out of Egypt, then we, our children, and our children's children would still be enslaved to Pharaoh in Egypt.
       </p>
 
+      <h3>The Four Sons — אַרְבָּעָה בָּנִים</h3>
+      <p>
+        The Torah speaks of four types of children — and teaches us to meet each one where they are.
+      </p>
+      {[
+        {
+          emoji: '🧠',
+          type: 'The Wise Son',
+          hebrew: 'חָכָם',
+          asks: '"What are the testimonies, statutes, and laws that God has commanded us?"',
+          answer: 'Teach him all the laws of Passover in full detail — he wants to understand deeply.',
+        },
+        {
+          emoji: '😤',
+          type: 'The Wicked Son',
+          hebrew: 'רָשָׁע',
+          asks: '"What does this service mean to you?" — saying you, not us.',
+          answer: 'By excluding himself from the community, he has denied a core truth. Tell him: "It is because of what God did for me when I left Egypt — for me, not for him."',
+        },
+        {
+          emoji: '😶',
+          type: 'The Simple Son',
+          hebrew: 'תָּם',
+          asks: '"What is this?"',
+          answer: '"With a strong hand God took us out of Egypt, out of the house of slavery."',
+        },
+        {
+          emoji: '🤐',
+          type: 'The One Who Does Not Know How to Ask',
+          hebrew: 'שֶׁאֵינוֹ יוֹדֵעַ לִשְׁאוֹל',
+          asks: null,
+          answer: 'You open the conversation for them. As it is written: "You shall tell your child on that day."',
+        },
+      ].map(({ emoji, type, hebrew, asks, answer }) => (
+        <div key={type} style={{
+          background: '#fff',
+          borderTop: '2px solid #808080',
+          borderLeft: '2px solid #808080',
+          borderRight: '2px solid #fff',
+          borderBottom: '2px solid #fff',
+          padding: '8px 10px',
+          marginBottom: 8,
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 4 }}>
+            <span style={{ fontSize: 20 }}>{emoji}</span>
+            <strong style={{ fontSize: 13 }}>{type}</strong>
+            <span style={{ fontFamily: "'David', serif", fontSize: 14, color: '#400000', marginLeft: 4 }}>{hebrew}</span>
+          </div>
+          {asks && <p style={{ fontStyle: 'italic', marginBottom: 4 }}>{asks}</p>}
+          <p style={{ color: '#333' }}>{answer}</p>
+        </div>
+      ))}
+
       <h3>The Ten Plagues</h3>
       <ReaderBadge slotIndex={7} cue="leads the plagues" />
       <p>
