@@ -239,11 +239,6 @@ export const WINE_OCCASIONS = [
 
 export const HALLEL_SONGS = [
   {
-    title: 'Dayenu',
-    youtubeId: 'sLG1bYtCFgk',
-    description: 'The classic Passover song of gratitude — "It would have been enough!"',
-  },
-  {
     title: "Blowin' in the Wind — Bob Dylan",
     youtubeId: 'cQBVgtcR2rM',
     description: 'A protest anthem that asks the timeless questions of freedom and justice — sing the chorus together.',

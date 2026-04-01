@@ -1,6 +1,29 @@
+import { useState } from 'react';
 import ReaderBadge from '../components/ReaderBadge';
 import MediaResources from '../components/MediaResources';
 import { SEDER_MEDIA } from '../config/sederConfig';
+
+function DayenuPlayer() {
+  const [loaded, setLoaded] = useState(false);
+  return loaded ? (
+    <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, margin: '8px 0' }}>
+      <iframe
+        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
+        src="https://www.youtube.com/embed/sLG1bYtCFgk?autoplay=1"
+        title="Dayenu"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
+    </div>
+  ) : (
+    <div
+      onClick={() => setLoaded(true)}
+      style={{ background: '#000', height: 44, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', margin: '8px 0' }}
+    >
+      <span style={{ color: '#fff', fontSize: 11, fontFamily: 'var(--font-ui)' }}>▶ Click to play Dayenu</span>
+    </div>
+  );
+}
 
 export default function Maggid() {
   return (
@@ -77,6 +100,7 @@ export default function Maggid() {
       <blockquote>
         🎵 Sing together: <strong>Dai-dai-yenu, dai-dai-yenu, dai-dai-yenu, dayenu dayenu!</strong>
       </blockquote>
+      <DayenuPlayer />
 
       <h3>Pesach, Matzah, and Maror</h3>
       <ReaderBadge slotIndex={10} cue="explains the three essentials" />
