@@ -13,7 +13,7 @@ export default function Desktop() {
             key={step.id}
             icon={step.icon}
             label={step.filename}
-            onDoubleClick={() => openWindow(step.id, { width: 620, height: 480 })}
+            onDoubleClick={() => openWindow(step.id, { width: 780, height: 520 })}
           />
         ))}
       </div>
