@@ -46,11 +46,6 @@ function WineCup({ index, filled, onClick, elijah }) {
           </linearGradient>
         </defs>
       </svg>
-      {elijah && (
-        <div style={{ fontSize: 9, fontFamily: 'var(--font-ui)', textAlign: 'center', color: '#92610a', marginTop: 2 }}>
-          Elijah
-        </div>
-      )}
     </div>
   );
 }
