@@ -336,6 +336,101 @@ const QUESTIONS = [
   },
 ];
 
+// ── 20 Questions words ──
+const TWENTY_Q_WORDS = [
+  { word: 'Moses', hint: 'Person' },
+  { word: 'Pharaoh', hint: 'Person' },
+  { word: 'Miriam', hint: 'Person' },
+  { word: 'Aaron', hint: 'Person' },
+  { word: "Pharaoh's Daughter", hint: 'Person' },
+  { word: 'Nachshon', hint: 'Person' },
+  { word: 'Joseph', hint: 'Person' },
+  { word: 'The Burning Bush', hint: 'Place/Thing' },
+  { word: 'The Red Sea', hint: 'Place' },
+  { word: 'The Nile River', hint: 'Place' },
+  { word: 'Egypt', hint: 'Place' },
+  { word: 'Jerusalem', hint: 'Place' },
+  { word: 'Matzah', hint: 'Thing' },
+  { word: 'The Afikomen', hint: 'Thing' },
+  { word: 'The Seder Plate', hint: 'Thing' },
+  { word: 'A Wine Cup', hint: 'Thing' },
+  { word: 'The Haggadah', hint: 'Thing' },
+  { word: 'Charoset', hint: 'Thing' },
+  { word: 'Horseradish', hint: 'Thing' },
+  { word: 'Parsley', hint: 'Thing' },
+  { word: 'Salt Water', hint: 'Thing' },
+  { word: 'A Shank Bone', hint: 'Thing' },
+  { word: 'Elijah\'s Cup', hint: 'Thing' },
+  { word: 'The Ten Commandments', hint: 'Thing' },
+  { word: 'A Frog', hint: 'Animal' },
+  { word: 'A Locust', hint: 'Animal' },
+  { word: 'The Passover Lamb', hint: 'Animal' },
+  { word: 'Darkness', hint: 'Plague' },
+  { word: 'Hail', hint: 'Plague' },
+  { word: 'Dayenu', hint: 'Song' },
+];
+
+function TwentyQuestions() {
+  const [wordIndex, setWordIndex] = useState(() => Math.floor(Math.random() * TWENTY_Q_WORDS.length));
+  const [count, setCount] = useState(0);
+
+  const { word } = TWENTY_Q_WORDS[wordIndex];
+
+  function newWord() {
+    setWordIndex(Math.floor(Math.random() * TWENTY_Q_WORDS.length));
+    setCount(0);
+  }
+
+  return (
+    <div>
+      <div style={{ fontFamily: 'var(--font-display)', fontSize: 22, color: '#000080', marginBottom: 12 }}>
+        🤔 10 Questions
+      </div>
+
+      {/* Word card */}
+      <div style={{
+        background: '#fff',
+        borderTop: '2px solid #808080', borderLeft: '2px solid #808080',
+        borderRight: '2px solid #fff', borderBottom: '2px solid #fff',
+        padding: '16px 12px', textAlign: 'center', marginBottom: 12,
+      }}>
+        <div style={{ fontFamily: 'var(--font-display)', fontSize: 36, color: '#000080', letterSpacing: 1 }}>
+          {word}
+        </div>
+      </div>
+
+      {/* Question counter */}
+      <div style={{ textAlign: 'center', marginBottom: 12 }}>
+        <div style={{ fontFamily: 'var(--font-display)', fontSize: 48, color: count >= 10 ? '#cc0000' : '#000080' }}>
+          {count} / 10
+        </div>
+        <div style={{ display: 'flex', gap: 6, justifyContent: 'center' }}>
+          <button
+            className="win-btn"
+            onClick={() => setCount((c) => Math.max(0, c - 1))}
+            disabled={count === 0}
+            style={{ width: 36 }}
+          >
+            −
+          </button>
+          <button
+            className="win-btn"
+            onClick={() => setCount((c) => Math.min(10, c + 1))}
+            disabled={count === 10}
+            style={{ width: 36 }}
+          >
+            +
+          </button>
+        </div>
+      </div>
+
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <button className="win-btn" onClick={newWord}>↺ New Word</button>
+      </div>
+    </div>
+  );
+}
+
 // ── Confetti ──
 function Confetti() {
   const pieces = useMemo(() =>
@@ -461,21 +556,56 @@ function Leaderboard({ participants, scores, currentPlayerId }) {
 // ── Main component ──
 export default function Games() {
   const { participants } = useSedar();
+  const [tab, setTab]             = useState('trivia');
   const [current, setCurrent]     = useState(0);
   const [selected, setSelected]   = useState(null);
   const [showFact, setShowFact]   = useState(false);
   const [scores, setScores]       = useState({});
   const [done, setDone]           = useState(false);
 
+  const tabs = [
+    { id: 'trivia', label: '🎲 Trivia' },
+    { id: '20q', label: '🤔 10 Questions' },
+  ];
+
+  const tabBar = (
+    <div style={{ display: 'flex', gap: 2, marginBottom: 10 }}>
+      {tabs.map((t) => (
+        <button
+          key={t.id}
+          className="win-btn"
+          onClick={() => setTab(t.id)}
+          style={{
+            borderTop: tab === t.id ? '2px solid #808080' : undefined,
+            borderLeft: tab === t.id ? '2px solid #808080' : undefined,
+            borderRight: tab === t.id ? '2px solid #fff' : undefined,
+            borderBottom: tab === t.id ? '2px solid #fff' : undefined,
+            background: tab === t.id ? '#fff' : undefined,
+            fontWeight: tab === t.id ? 'bold' : undefined,
+          }}
+        >
+          {t.label}
+        </button>
+      ))}
+    </div>
+  );
+
+  if (tab === '20q') {
+    return <div>{tabBar}<TwentyQuestions /></div>;
+  }
+
   if (participants.length === 0) {
     return (
-      <div style={{ textAlign: 'center', padding: 32 }}>
-        <div style={{ fontSize: 40, marginBottom: 10 }}>👥</div>
-        <div style={{ fontFamily: 'var(--font-display)', fontSize: 18, color: '#000080', marginBottom: 8 }}>
-          No players registered
-        </div>
-        <div style={{ fontSize: 12, color: '#555' }}>
-          Open Registration.exe first to add players.
+      <div>
+        {tabBar}
+        <div style={{ textAlign: 'center', padding: 32 }}>
+          <div style={{ fontSize: 40, marginBottom: 10 }}>👥</div>
+          <div style={{ fontFamily: 'var(--font-display)', fontSize: 18, color: '#000080', marginBottom: 8 }}>
+            No players registered
+          </div>
+          <div style={{ fontSize: 12, color: '#555' }}>
+            Open Registration.exe first to add players.
+          </div>
         </div>
       </div>
     );
@@ -517,6 +647,7 @@ export default function Games() {
     return (
       <>
         <Confetti />
+        {tabBar}
         <div style={{ textAlign: 'center' }}>
           <div style={{ fontFamily: 'var(--font-display)', fontSize: 24, color: '#000080', marginBottom: 2 }}>
             🏆 Game Over!
@@ -536,6 +667,7 @@ export default function Games() {
   // ── Game screen ──
   return (
     <div>
+      {tabBar}
       {/* Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
         <div style={{ fontFamily: 'var(--font-display)', fontSize: 22, color: '#000080' }}>
