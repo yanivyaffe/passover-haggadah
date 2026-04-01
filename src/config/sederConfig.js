@@ -235,6 +235,7 @@ export const WINE_OCCASIONS = [
   'The Cup of Deliverance — Maggid',
   'The Cup of Redemption — Barech',
   'The Cup of Praise — Hallel',
+  "Elijah's Cup — Kos Eliyahu",
 ];
 
 export const HALLEL_SONGS = [
