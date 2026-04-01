@@ -83,6 +83,7 @@ export default function Maggid() {
           hebrew: 'חָכָם',
           asks: '"What are the testimonies, statutes, and laws that God has commanded us?"',
           answer: 'Teach him all the laws of Passover in full detail — he wants to understand deeply.',
+          slotIndex: 33,
         },
         {
           emoji: '😤',
@@ -90,6 +91,7 @@ export default function Maggid() {
           hebrew: 'רָשָׁע',
           asks: '"What does this service mean to you?" — saying you, not us.',
           answer: 'By excluding himself from the community, he has denied a core truth. Tell him: "It is because of what God did for me when I left Egypt — for me, not for him."',
+          slotIndex: 34,
         },
         {
           emoji: '😶',
@@ -97,6 +99,7 @@ export default function Maggid() {
           hebrew: 'תָּם',
           asks: '"What is this?"',
           answer: '"With a strong hand God took us out of Egypt, out of the house of slavery."',
+          slotIndex: 35,
         },
         {
           emoji: '🤐',
@@ -104,8 +107,9 @@ export default function Maggid() {
           hebrew: 'שֶׁאֵינוֹ יוֹדֵעַ לִשְׁאוֹל',
           asks: null,
           answer: 'You open the conversation for them. As it is written: "You shall tell your child on that day."',
+          slotIndex: 36,
         },
-      ].map(({ emoji, type, hebrew, asks, answer }) => (
+      ].map(({ emoji, type, hebrew, asks, answer, slotIndex }) => (
         <div key={type} style={{
           background: '#fff',
           borderTop: '2px solid #808080',
@@ -120,6 +124,7 @@ export default function Maggid() {
             <strong style={{ fontSize: 13 }}>{type}</strong>
             <span style={{ fontFamily: "'David', serif", fontSize: 14, color: '#400000', marginLeft: 4 }}>{hebrew}</span>
           </div>
+          <ReaderBadge slotIndex={slotIndex} cue={`reads the ${type}`} />
           {asks && <p style={{ fontStyle: 'italic', marginBottom: 4 }}>{asks}</p>}
           <p style={{ color: '#333' }}>{answer}</p>
         </div>
