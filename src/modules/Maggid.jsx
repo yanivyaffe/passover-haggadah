@@ -204,6 +204,8 @@ export default function Maggid() {
         <li><strong>🌿 Maror (Bitter Herbs)</strong> — because the Egyptians embittered our ancestors' lives</li>
       </ul>
 
+      <VideoEmbed youtubeId="VoRmd6lMREE" label="Pesach, Matzah, and Maror" />
+
       <h3>In Every Generation</h3>
       <ReaderBadge slotIndex={11} cue="reads" />
       <blockquote>
