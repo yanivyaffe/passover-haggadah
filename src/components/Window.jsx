@@ -1,14 +1,19 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { Rnd } from 'react-rnd';
 import { useSedar } from '../context/SedarContext';
 
+const ZOOM_STEPS = [0.8, 1, 1.25, 1.5, 1.75, 2];
+const DEFAULT_ZOOM = 1;
+
 export default function Window({ id, title, icon, children, defaultSize }) {
   const { openWindows, closeWindow, minimizeWindow, focusWindow, updateWindowBounds } = useSedar();
+  const [zoomIndex, setZoomIndex] = useState(ZOOM_STEPS.indexOf(DEFAULT_ZOOM));
   const win = openWindows.find((w) => w.id === id);
 
   if (!win || win.minimized) return null;
 
   const { x, y, width, height, zIndex } = win;
+  const zoom = ZOOM_STEPS[zoomIndex];
 
   return (
     <Rnd
@@ -38,6 +43,24 @@ export default function Window({ id, title, icon, children, defaultSize }) {
           <div className="window-controls">
             <button
               className="window-ctrl-btn"
+              title="Zoom out"
+              onClick={(e) => { e.stopPropagation(); setZoomIndex((i) => Math.max(0, i - 1)); }}
+              disabled={zoomIndex === 0}
+              style={{ fontSize: 9, fontFamily: 'var(--font-ui)', width: 22 }}
+            >
+              A-
+            </button>
+            <button
+              className="window-ctrl-btn"
+              title="Zoom in"
+              onClick={(e) => { e.stopPropagation(); setZoomIndex((i) => Math.min(ZOOM_STEPS.length - 1, i + 1)); }}
+              disabled={zoomIndex === ZOOM_STEPS.length - 1}
+              style={{ fontSize: 9, fontFamily: 'var(--font-ui)', width: 22 }}
+            >
+              A+
+            </button>
+            <button
+              className="window-ctrl-btn"
               title="Minimize"
               onClick={(e) => { e.stopPropagation(); minimizeWindow(id); }}
             >
@@ -52,7 +75,7 @@ export default function Window({ id, title, icon, children, defaultSize }) {
             </button>
           </div>
         </div>
-        <div className="window-body">
+        <div className="window-body" style={{ fontSize: `${zoom}em` }}>
           {children}
         </div>
       </div>
