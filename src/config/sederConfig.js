@@ -268,26 +268,13 @@ export const SEDER_MEDIA = {
   ],
   urchatz: [
     { badge: 'Video', title: 'WHO — Vaccine Equity (2:30)', description: 'WHO discussion on vaccine equity — useful for the public-health thread about unequal care.', href: 'https://www.pbs.org/video/urgent-plea-vaccine-equity-xtpirz/' },
-    { badge: 'Image', title: 'UNICEF WASH Overview', description: 'UNICEF clean-water and hygiene overview for discussion and visual cue cards.', href: 'https://www.unicef.org/water-sanitation-and-hygiene-wash' },
   ],
   karpas: [
-    { badge: 'Video', title: 'Global Refugee Trends (2:18)', description: 'Current-event reflection on climate, displacement, and life after crisis.', href: 'https://www.pbs.org/video/world-refugee-day-2024-solutions-largest-displacement-crisis-record' },
     { badge: 'Image', title: 'UNHCR: No Escape — Climate, Conflict & Displacement', description: 'Report connecting climate change, conflict, and forced displacement.', href: 'https://www.unhcr.org/publications/no-escape-frontlines-climate-change-conflict-and-forced-displacement' },
-    { badge: 'Music', title: 'Hava Nagila — Traditional Klezmer', description: 'Traditional melody to keep the room in a celebratory, forward-moving rhythm.', youtubeId: 'jYCYa_eLhh0' },
   ],
   yachatz: [
-    { badge: 'Video', title: 'FRONTLINE: Separated — Children at the Border', description: 'Family-separation framing for the hidden-piece concept.', href: 'https://www.pbs.org/video/separated-children-border-preview-qxotij/' },
-    { badge: 'Image', title: 'Refugee Children — Image Archive', description: 'Photo page for grounding the grief in this section.', href: 'https://commons.wikimedia.org/wiki/File%3ARefugee_kids.jpg' },
-    { badge: 'Music', title: 'Mah Nishtanah in Hebrew (2:45)', description: 'Optional song cue before the matzah break ritual.', youtubeId: 'xsWh4YaD3HE' },
   ],
-  maggid: [
-    { badge: 'Video', title: 'PBS — Iran Protests: Regime Crackdown', description: 'Modern speech-restriction narrative — who is allowed to speak?', href: 'https://www.pbs.org/video/inside-the-iranian-uprising-preview/' },
-    { badge: 'Image', title: 'Amnesty: Iran Internet Shutdown Report', description: 'Rights report context for repression and naming who is silenced.', href: 'https://www.amnesty.org/en/latest/news/2026/01/internet-shutdown-in-iran-hides-violations-in-escalating-protests/' },
-    { badge: 'Video', title: 'Dave Chappelle: Displaced People', description: 'Chappelle on displacement and powerlessness.', youtubeId: 'KhCbR_LpQjI' },
-    { badge: 'Video', title: 'Dave Chappelle: Analogy of a Black Slave Owner to Israel', description: "Chappelle's perspective on oppression cycles and the Israel-Palestine dynamic.", youtubeId: '3P6692Bdy7U' },
-    { badge: 'Video', title: 'Cancel Culture & Antisemitism', description: 'Exploring antisemitism and cancel culture in contemporary discourse.', youtubeId: 'R90_EeRP2wc' },
-    { badge: 'Video', title: 'Growing Up With Israeli Parents', description: 'A personal perspective on Israeli-American identity.', youtubeId: 'Evx3KjaScPA' },
-  ],
+  maggid: [],
   rachtzah: [
     { badge: 'Video', title: 'UNICEF WASH in Life', description: 'Short sanitation and public-health messaging supporting the inequity reading.', href: 'https://www.unicefusa.org/videos/unicef-wont-stop-providing-safe-water-and-hygiene-1' },
     { badge: 'Image', title: 'UNICEF WASH Visual Hub', description: 'Infographic and image hub on water, sanitation, and child health.', href: 'https://www.unicef.org/wash' },

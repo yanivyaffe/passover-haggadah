@@ -84,6 +84,7 @@ export default function Maggid() {
           asks: '"What are the testimonies, statutes, and laws that God has commanded us?"',
           answer: 'Teach him all the laws of Passover in full detail — he wants to understand deeply.',
           slotIndex: 33,
+          videoId: 'KhCbR_LpQjI',
         },
         {
           emoji: '😤',
@@ -100,6 +101,7 @@ export default function Maggid() {
           asks: '"What is this?"',
           answer: '"With a strong hand God took us out of Egypt, out of the house of slavery."',
           slotIndex: 35,
+          videoId: 'R90_EeRP2wc',
         },
         {
           emoji: '🤐',
@@ -109,7 +111,7 @@ export default function Maggid() {
           answer: 'You open the conversation for them. As it is written: "You shall tell your child on that day."',
           slotIndex: 36,
         },
-      ].map(({ emoji, type, hebrew, asks, answer, slotIndex }) => (
+      ].map(({ emoji, type, hebrew, asks, answer, slotIndex, videoId }) => (
         <div key={type} style={{
           background: '#fff',
           borderTop: '2px solid #808080',
@@ -127,6 +129,7 @@ export default function Maggid() {
           <ReaderBadge slotIndex={slotIndex} cue={`reads the ${type}`} />
           {asks && <p style={{ fontStyle: 'italic', marginBottom: 4 }}>{asks}</p>}
           <p style={{ color: '#333' }}>{answer}</p>
+          {videoId && <VideoEmbed youtubeId={videoId} label={type} />}
         </div>
       ))}
 
