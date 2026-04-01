@@ -373,12 +373,14 @@ const TWENTY_Q_WORDS = [
 function TwentyQuestions() {
   const [wordIndex, setWordIndex] = useState(() => Math.floor(Math.random() * TWENTY_Q_WORDS.length));
   const [count, setCount] = useState(0);
+  const [started, setStarted] = useState(false);
 
   const { word } = TWENTY_Q_WORDS[wordIndex];
 
   function newWord() {
     setWordIndex(Math.floor(Math.random() * TWENTY_Q_WORDS.length));
     setCount(0);
+    setStarted(false);
   }
 
   return (
@@ -392,11 +394,20 @@ function TwentyQuestions() {
         background: '#fff',
         borderTop: '2px solid #808080', borderLeft: '2px solid #808080',
         borderRight: '2px solid #fff', borderBottom: '2px solid #fff',
-        padding: '16px 12px', textAlign: 'center', marginBottom: 12,
-      }}>
-        <div style={{ fontFamily: 'var(--font-display)', fontSize: 36, color: '#000080', letterSpacing: 1 }}>
-          {word}
-        </div>
+        padding: '28px 12px', textAlign: 'center', marginBottom: 12,
+        cursor: started ? 'default' : 'pointer',
+      }}
+        onClick={() => { if (!started) setStarted(true); }}
+      >
+        {started ? (
+          <div style={{ fontFamily: 'var(--font-display)', fontSize: 36, color: '#000080', letterSpacing: 1 }}>
+            {word}
+          </div>
+        ) : (
+          <div style={{ fontFamily: 'var(--font-display)', fontSize: 24, color: '#808080', letterSpacing: 1 }}>
+            Click to reveal word
+          </div>
+        )}
       </div>
 
       {/* Question counter */}
