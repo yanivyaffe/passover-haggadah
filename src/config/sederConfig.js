@@ -264,9 +264,6 @@ export const HALLEL_SONGS = [
 export const SEDER_MEDIA = {
   kadesh: [
     { badge: 'Video', title: 'Opening Seder Clip', description: 'Begin the evening with this clip before the first section.', youtubeId: 'qKqIvv4DfIc' },
-    { badge: 'Video', title: 'Global Refugee Trends (2:18)', description: 'Refugee and climate-displacement primer that frames the opening question about forced movement and safe belonging.', href: 'https://www.pbs.org/video/world-refugee-day-2024-solutions-largest-displacement-crisis-record' },
-    { badge: 'Image', title: 'Refugees on a Boat — Wikimedia', description: 'Historical rescue image: migration has always mixed danger, policy, and survival.', href: 'https://commons.wikimedia.org/wiki/File%3ARefugees_on_a_boat.jpg' },
-    { badge: 'Image', title: 'UNHCR Refugees & Migrants Video Portal', description: 'UN media index for refugee and migration stories.', href: 'https://refugeesmigrants.un.org/videos' },
   ],
   urchatz: [
     { badge: 'Video', title: 'WHO — Vaccine Equity (2:30)', description: 'WHO discussion on vaccine equity — useful for the public-health thread about unequal care.', href: 'https://www.pbs.org/video/urgent-plea-vaccine-equity-xtpirz/' },

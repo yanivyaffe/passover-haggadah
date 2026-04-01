@@ -3,14 +3,14 @@ import ReaderBadge from '../components/ReaderBadge';
 import MediaResources from '../components/MediaResources';
 import { SEDER_MEDIA } from '../config/sederConfig';
 
-function DayenuPlayer() {
+function VideoEmbed({ youtubeId, label }) {
   const [loaded, setLoaded] = useState(false);
   return loaded ? (
     <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, margin: '8px 0' }}>
       <iframe
         style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
-        src="https://www.youtube.com/embed/sLG1bYtCFgk?autoplay=1"
-        title="Dayenu"
+        src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1`}
+        title={label}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       />
@@ -20,10 +20,14 @@ function DayenuPlayer() {
       onClick={() => setLoaded(true)}
       style={{ background: '#000', height: 44, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', margin: '8px 0' }}
     >
-      <span style={{ color: '#fff', fontSize: 11, fontFamily: 'var(--font-ui)' }}>▶ Click to play Dayenu</span>
+      <span style={{ color: '#fff', fontSize: 11, fontFamily: 'var(--font-ui)' }}>▶ Click to play</span>
     </div>
   );
 }
+
+const HaLachmaVideo = () => <VideoEmbed youtubeId="ZrjclpiVaEc" label="Ha Lachma Anya" />;
+
+const DayenuPlayer = () => <VideoEmbed youtubeId="sLG1bYtCFgk" label="Dayenu" />;
 
 export default function Maggid() {
   return (
@@ -45,6 +49,7 @@ export default function Maggid() {
         This year we are here; next year may we be in the Land of Israel.
         This year we are slaves; next year may we be free.
       </p>
+      <HaLachmaVideo />
 
       <h3>The Four Questions — מַה נִּשְׁתַּנָּה</h3>
       <ReaderBadge slotIndex={5} cue="asks the Four Questions" />
