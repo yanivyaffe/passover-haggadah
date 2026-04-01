@@ -289,7 +289,6 @@ export const SEDER_MEDIA = {
     { badge: 'Video', title: 'Dave Chappelle: Analogy of a Black Slave Owner to Israel', description: "Chappelle's perspective on oppression cycles and the Israel-Palestine dynamic.", youtubeId: '3P6692Bdy7U' },
     { badge: 'Video', title: 'Cancel Culture & Antisemitism', description: 'Exploring antisemitism and cancel culture in contemporary discourse.', youtubeId: 'R90_EeRP2wc' },
     { badge: 'Video', title: 'Growing Up With Israeli Parents', description: 'A personal perspective on Israeli-American identity.', youtubeId: 'Evx3KjaScPA' },
-    { badge: 'Music', title: 'Maccabeats — Dayenu', description: 'A lively, family-friendly version of Dayenu.', href: 'https://maccabeats.bandcamp.com/track/dayenu' },
   ],
   rachtzah: [
     { badge: 'Video', title: 'UNICEF WASH in Life', description: 'Short sanitation and public-health messaging supporting the inequity reading.', href: 'https://www.unicefusa.org/videos/unicef-wont-stop-providing-safe-water-and-hygiene-1' },
@@ -321,7 +320,6 @@ export const SEDER_MEDIA = {
   tzafun: [
     { badge: 'Video', title: 'PBS / FRONTLINE: Separated', description: 'FRONTLINE preview on family separation at the border.', href: 'https://www.pbs.org/video/separated-children-border-preview-qxotij/' },
     { badge: 'Image', title: 'UNHCR Media Stories', description: 'Media and stills for hidden families and legal invisibility themes.', href: 'https://www.unhcr.org/media/' },
-    { badge: 'Music', title: 'Maccabeats — Dayenu', description: 'Optional musical bridge after the afikomen reveal.', href: 'https://maccabeats.bandcamp.com/track/dayenu' },
   ],
   barech: [
     { badge: 'Video', title: 'UNHCR Climate Displacement Explainer (2:18)', description: 'Translate gratitude into climate justice action.', href: 'https://www.pbs.org/video/world-refugee-day-2024-solutions-largest-displacement-crisis-record' },
